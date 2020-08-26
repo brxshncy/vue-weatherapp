@@ -2,7 +2,7 @@
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm': ''">
     <main>
       <div class="search-box">
-        <input type="text" name="" id="" v-model="query" v-on:keypress="fetchWeather" placeholder="Search..." class="search-bar">
+        <input type="text" name="" id="" placeholder="Enter Area here" v-model="query" v-on:keypress="fetchWeather"  class="search-bar">
       </div>
       <div class="weather-wrap" v-if="typeof weather.main !='undefined'">
         <div class="location-box">
@@ -69,13 +69,11 @@ body{
   font-family:'montserrat', sans-serif;
 }
 #app{
-  background-image:url('./assets/cold-bg.jpg');
-  background-size:cover;
-  background-position: bottom;
+  background:url('./assets/cold-bg.jpg') no-repeat center center/cover;
   transition: 0.4s;
 }
 #app.warm{
-  background-image:url('./assets/warm-bg.jpg');
+  background:url('./assets/warm-bg.jpg') no-repeat center center/cover;
 }
 main{
   min-height:100vh;
